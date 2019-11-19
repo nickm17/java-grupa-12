@@ -1,4 +1,4 @@
-package ro.siit;
+package ro.siit.intro_to_java;
 
 import java.util.Scanner;
 
