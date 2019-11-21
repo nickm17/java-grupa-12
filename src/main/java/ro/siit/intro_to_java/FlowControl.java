@@ -1,5 +1,7 @@
 package ro.siit.intro_to_java;
 
+import java.util.Scanner;
+
 public class FlowControl {
 
     public static void main(String[] args) {
@@ -19,4 +21,16 @@ public class FlowControl {
         }
         System.out.println("sum= " + sum);
     }
+
+
+
+    public static double getANumberFromKeyboard(Scanner altScanner, String mesaj) {
+        System.out.println(mesaj);
+        return altScanner.nextDouble();
+    }
+
+//    public static double getSecondNumber(Scanner altScanner) {
+//        System.out.println();
+//        return altScanner.nextDouble();
+//    }
 }
