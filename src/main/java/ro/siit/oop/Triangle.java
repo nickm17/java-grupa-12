@@ -5,13 +5,14 @@ public class Triangle extends Shape {
     private int base;
     private int height;
 
-    @Override
-    public void draw(){
+//    @Override
+    public static void draw(){
         System.out.println("Draw Triangle");
     }
 
     @Override
     public int computeAria() {
+        System.out.println("Triunghi");
         return (base*height)/2;
     }
 

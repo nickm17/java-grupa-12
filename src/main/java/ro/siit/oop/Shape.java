@@ -1,13 +1,22 @@
 package ro.siit.oop;
 
-public class Shape {
+public abstract class Shape {
     // variabilele statice sunt specifice clasei , aceeasi valoare o sa aiba pentru tiatee instantele clasei
-    static Color color;
+    public static Color color;
+    private Color color1;
     private int aria;
 
     public static void main(String[] args) {
 
     }
+
+
+    public static void draw(){ // nu poate fi suprascrisa
+        System.out.println("Draw Shape");
+    }
+
+    public abstract int computeAria() throws IllegalArgumentException;
+
 
     public int getAria() {
         return aria;
@@ -25,11 +34,11 @@ public class Shape {
         this.aria = aria;
     }
 
-    public void draw(){
-        System.out.println("Draw Shape");
+    public Color getColor1() {
+        return color1;
     }
 
-    public int computeAria(){
-        return 0;
+    public void setColor1(Color color1) {
+        this.color1 = color1;
     }
 }
