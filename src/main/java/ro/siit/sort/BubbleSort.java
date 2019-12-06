@@ -36,4 +36,8 @@ public class BubbleSort {
     }
 
     // https://www.geeksforgeeks.org/bubble-sort/
+    // https://www.geeksforgeeks.org/quick-sort/
+    // https://www.geeksforgeeks.org/merge-sort/
+    // https://www.geeksforgeeks.org/selection-sort/
+    // https://www.geeksforgeeks.org/sorting-algorithms/
 }

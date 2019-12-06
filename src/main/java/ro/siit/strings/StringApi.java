@@ -1,6 +1,5 @@
 package ro.siit.strings;
 
-import java.sql.SQLOutput;
 import java.util.Arrays;
 
 public class StringApi {
@@ -35,6 +34,9 @@ public class StringApi {
         // "[0-9]"
         // "[a-zA-Z]"
         // "[a-zA-Z0-9]"
+        // https://www.tutorialspoint.com/java/java_regular_expressions.htm
+        // https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html
+
 
         String[] splitByDigit = string1.split("\\d");
         String[] splitBySpace = string1.split("\\s");

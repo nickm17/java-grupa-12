@@ -1,6 +1,8 @@
 package ro.siit.oop;
 
-public abstract class Shape {
+import ro.siit.oop2.interfaces.MarkerInterface;
+
+public abstract class Shape implements MarkerInterface {
     // variabilele statice sunt specifice clasei , aceeasi valoare o sa aiba pentru tiatee instantele clasei
     public static Color color;
     private Color color1;
@@ -9,7 +11,10 @@ public abstract class Shape {
     public static void main(String[] args) {
 
     }
-
+    public int computeAriaShape() {
+//        System.out.println("Cerc");
+        return 23232;
+    }
 
     public static void draw(){ // nu poate fi suprascrisa
         System.out.println("Draw Shape");
