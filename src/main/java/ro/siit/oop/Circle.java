@@ -14,4 +14,9 @@ public class Circle extends Shape {
         System.out.println("Cerc");
         return (int)(Math.PI * Math.pow(this.radius, 2));
     }
+    public int computeAriaCircle() {
+        System.out.println("Cerc");
+        return (int)(Math.PI * Math.pow(this.radius, 2));
+    }
+
 }
