@@ -1,5 +1,7 @@
 package ro.siit.oop2.interfaces;
 
 
-public interface MarkerInterface {
+import java.io.Serializable;
+
+public interface MarkerInterface extends Serializable , Cloneable {
 }
