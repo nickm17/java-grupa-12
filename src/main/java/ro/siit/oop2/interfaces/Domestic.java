@@ -1,7 +1,7 @@
 package ro.siit.oop2.interfaces;
 
 //@FunctionalInterface
-public interface Domestic extends Domestic2, Runnable{
+public interface Domestic extends Domestic2 {
 
 //    abstract void pet();
 //    public abstract void pet();
