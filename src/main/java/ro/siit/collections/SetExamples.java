@@ -1,5 +1,6 @@
 package ro.siit.collections;
 
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.NavigableSet;
 import java.util.Objects;
@@ -59,20 +60,40 @@ public class SetExamples {
         System.out.println(navigableSet.floor(4));
         System.out.println(navigableSet.higher(4));
 
+        Comparator<Angajat> angajatComparatorClasaAnonima = new Comparator<Angajat>() {
+            int x = 12312;
 
-        Set<Angajat> angajati = new TreeSet<>();
+            @Override
+            public int compare(Angajat o1, Angajat o2) {
+                int salariuCompare = Integer.compare(o1.getSalariu(), o2.getSalariu());
+                if (salariuCompare != 0) {
+                    return salariuCompare;
+                }
+                return o1.getCnp().compareTo(o2.getCnp());
+            }
+
+        };
+
+//        Set<Angajat> angajati = new TreeSet<>(angajatComparatorClasaAnonima);
+        Comparator<Angajat> comparatorAngajatLamda = (o1, o2) -> {
+            int salariuCompare = Integer.compare(o1.getSalariu(), o2.getSalariu());
+            if (salariuCompare != 0) {
+//                //return salariuCompare;
+            }
+            return o1.getCnp().compareTo(o2.getCnp());
+        };
+        Set<Angajat> angajati = new TreeSet<>(comparatorAngajatLamda);
 
         angajati.add(new Angajat("Ion",1,"65645444554"));
-        angajati.add(new Angajat("Ion",1,"12345444554"));
-        angajati.add(new Angajat("Ion",1,"45645444554"));
+        angajati.add(new Angajat("Ion",10,"12345444554"));
+        angajati.add(new Angajat("Ion",12,"45645444554"));
         angajati.add(new Angajat("Ion",1,"44445444554"));
-        angajati.forEach(System.out::println);
+        angajati.forEach(System.out::println);// ia fiecare element din colectie si face ceva cu el, in cazul asta il printeaza
     }
 
     @Getter
     @Setter
     @AllArgsConstructor
-    @EqualsAndHashCode
     @ToString
     static abstract class Persoana {
         String name;
@@ -81,7 +102,7 @@ public class SetExamples {
     @Getter
     @Setter
     @ToString
-    static class Angajat extends Persoana implements Comparable {
+    static class Angajat extends Persoana { //implements Comparable {
         private int salariu;
         private String cnp;
 
@@ -91,12 +112,12 @@ public class SetExamples {
             this.cnp = cnp;
         }
 
-        @Override
-        public int compareTo(Object o) {
-            // compare in functie de cnp
-//            Integer.compare(salariu, )
-            return this.cnp.compareTo(((Angajat)o).cnp);
-        }
+//        @Override
+//        public int compareTo(Object o) {
+//            // compare in functie de cnp
+////            Integer.compare(salariu, )
+//            return this.cnp.compareTo(((Angajat)o).cnp);
+//        }
 
         @Override
         public boolean equals(Object o) {
