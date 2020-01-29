@@ -1,6 +1,8 @@
 package ro.siit.oop;
 
+
 public class Address {
+
 
     private String street;
 
@@ -22,5 +24,9 @@ public class Address {
 
     public Address(Address address){
 
+    }
+
+    public Address(String street) {
+        this.street = street;
     }
 }
