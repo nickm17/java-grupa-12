@@ -7,6 +7,7 @@ public class Calculator {
         for ( String exp: splited) {
            sum += Integer.valueOf(exp);
         }
+        System.out.println(sum);
         return sum;
     }
 }
