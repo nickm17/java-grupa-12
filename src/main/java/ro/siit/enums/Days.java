@@ -21,6 +21,11 @@ public enum Days implements Domestic {
     public void pet() {
 
     }
+
+    @Override
+    public double speed() {
+        return 0;
+    }
 }
 class TestEnums{
 

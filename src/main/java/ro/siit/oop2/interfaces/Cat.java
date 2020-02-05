@@ -14,8 +14,13 @@ public class Cat extends Animal implements Domestic, Serializable, Cloneable {
     }
 
     @Override
-    public void doSomethingDefault() {
+    public double speed() {
+        return 0;
+    }
 
+    @Override
+    public void doSomethingDefault() {
+        Domestic.super.doSomethingDefault();
     }
 
 //    public static void doSomethingStatic(){

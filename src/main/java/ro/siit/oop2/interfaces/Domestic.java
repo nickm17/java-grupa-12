@@ -6,6 +6,10 @@ public interface Domestic extends Domestic2 {
 //    abstract void pet();
 //    public abstract void pet();
     void pet();
+    double speed();
+    default double speedInKmph(){
+        return speed()*1.6;
+    }
 
     public final static String OWNER = "Jack";
 //     static String OWNER2;// variabilele din interfete nu pot fi decat constante - static final
