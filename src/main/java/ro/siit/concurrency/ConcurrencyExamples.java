@@ -1,13 +1,65 @@
 package ro.siit.concurrency;
 
+import java.time.LocalDateTime;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+
 public class ConcurrencyExamples {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
 
         long now = System.currentTimeMillis();
 //        example3Threads();
-        counterIncrementatDeMaiMulteThreaduri();
+        //counterIncrementatDeMaiMulteThreaduri();
 
+        Callable callable = () -> "result ++++";
+
+        Runnable runnableTask = () -> {
+            try {
+                TimeUnit.MILLISECONDS.sleep(1000);
+                System.out.println("Current thread is: " + Thread.currentThread().getName() +"  Current time :: " + LocalDateTime.now());
+                System.out.println();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        };
+
+        ExecutorService executorService = Executors.newFixedThreadPool(10);
+
+//        executorService.execute(() -> {
+//            try {
+//                TimeUnit.MILLISECONDS.sleep(1000);
+//                System.out.println("Current thread is: " + Thread.currentThread().getName() + "  Current time :: " + LocalDateTime.now());
+//                System.out.println();
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        });
+//        executorService.execute(runnableTask);
+//        executorService.execute(runnableTask);
+//        executorService.execute(runnableTask);
+//        executorService.execute(runnableTask);
+//        executorService.execute(runnableTask);
+//        executorService.execute(runnableTask);
+//        executorService.execute(runnableTask);
+//        executorService.execute(runnableTask);
+//        executorService.execute(runnableTask);
+//        executorService.execute(runnableTask);
+
+        Future<?> submitResult = executorService.submit(runnableTask);
+        Future<?> submitResultCallable = executorService.submit(callable);
+
+//        while(!submitResult.isDone()){
+//            Thread.sleep(20);
+//        }
+        System.out.println(submitResult.isDone());
+        System.out.println(submitResultCallable.get());
+
+        executorService.shutdown();
         System.out.println("Duration" + (now-System.currentTimeMillis()));
     }
 
