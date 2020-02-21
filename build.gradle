@@ -12,6 +12,11 @@ repositories {
 }
 
 dependencies {
+
+    // https://mvnrepository.com/artifact/org.postgresql/postgresql
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.10'
+//    // https://mvnrepository.com/artifact/org.postgresql/postgresql
+
     // https://mvnrepository.com/artifact/com.google.guava/guava
     compile('com.google.guava:guava:28.1-jre')
 
