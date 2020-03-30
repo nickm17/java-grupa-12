@@ -16,6 +16,11 @@ public class ConcurrencyExamples {
 //        example3Threads();
         //counterIncrementatDeMaiMulteThreaduri();
 
+        exempluExecutorsService();
+        System.out.println("Duration" + (now-System.currentTimeMillis()));
+    }
+
+    private static void exempluExecutorsService() throws InterruptedException, ExecutionException {
         Callable callable = () -> "result ++++";
 
         Runnable runnableTask = () -> {
@@ -60,7 +65,6 @@ public class ConcurrencyExamples {
         System.out.println(submitResultCallable.get());
 
         executorService.shutdown();
-        System.out.println("Duration" + (now-System.currentTimeMillis()));
     }
 
     private static void counterIncrementatDeMaiMulteThreaduri() {
